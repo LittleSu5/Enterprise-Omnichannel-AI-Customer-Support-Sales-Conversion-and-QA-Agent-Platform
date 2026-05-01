@@ -1,0 +1,26 @@
+[
+  {
+    "user_id": "cust_001",
+    "name": "Acme Retail",
+    "tier": "enterprise",
+    "lifetime_value": 260000,
+    "tags": ["high_value", "renewal_candidate"],
+    "preferred_channel": "webchat"
+  },
+  {
+    "user_id": "cust_002",
+    "name": "Nova Beauty",
+    "tier": "vip",
+    "lifetime_value": 88000,
+    "tags": ["upsell_candidate"],
+    "preferred_channel": "private_dm"
+  },
+  {
+    "user_id": "cust_003",
+    "name": "Starter User",
+    "tier": "standard",
+    "lifetime_value": 1200,
+    "tags": ["new"],
+    "preferred_channel": "webchat"
+  }
+]
