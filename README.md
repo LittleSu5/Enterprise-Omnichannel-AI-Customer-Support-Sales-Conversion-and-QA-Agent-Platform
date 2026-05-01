@@ -1,74 +1,34 @@
 # Enterprise Omnichannel AI Customer Support, Sales Conversion, and QA Agent Platform
 
-A demo Python project for an enterprise-scale multi-agent platform covering customer support, sales follow-up, ticket handling, summaries, QA, and usage metrics.
+An enterprise-grade multi-agent platform for omnichannel customer support, sales conversion, workflow execution, conversation summarization, and QA automation.
 
-## Features
+## Overview
+This project simulates a large-scale AI agent platform designed for enterprise service scenarios. It coordinates multiple agents for intent understanding, customer profiling, retrieval, response generation, workflow execution, and quality assurance.
 
-- FastAPI service with chat, QA, ticket, and metrics endpoints
-- Multi-agent orchestration for intent understanding, profile enrichment, retrieval, response generation, execution, QA, and summarization
-- Mock CRM, order, ticket, and metrics services
-- Dashboard-ready token usage metrics seeded to platform-scale numbers
-- Simple tests for health and chat workflow
+## Core Capabilities
+- Omnichannel customer support workflow
+- Sales follow-up and conversion assistance
+- QA scoring and compliance review
+- Conversation summarization
+- Mock CRM, order, and ticket integration
+- Token usage metrics and monitoring endpoints
 
-## Project structure
+## Agent Architecture
+- Intent Agent: identifies user intent and issue type
+- Profile Agent: enriches customer context from behavior and attributes
+- Retrieval Agent: fetches FAQ, policy, and product knowledge
+- Response Agent: generates support or sales responses
+- Execution Agent: simulates CRM, order, and ticket actions
+- QA Agent: scores quality, compliance, and conversion opportunity
+- Summary Agent: produces structured conversation summaries
 
-```
-omni-agent-platform/
-├── app/
-│   ├── api/
-│   ├── agents/
-│   ├── models/
-│   ├── services/
-│   ├── workflows/
-│   └── main.py
-├── data/
-├── tests/
-├── requirements.txt
-└── README.md
-```
+## Tech Stack
+- Python
+- FastAPI
+- Pydantic
+- Pytest
 
-## Quick start
-
+## Run Locally
 ```bash
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS / Linux
-source .venv/bin/activate
-
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-```
-
-Open the API docs at:
-
-- `http://127.0.0.1:8000/docs`
-
-## Main endpoints
-
-- `GET /health`
-- `POST /api/chat/respond`
-- `POST /api/chat/sales-followup`
-- `POST /api/qa/evaluate`
-- `POST /api/tickets/create`
-- `GET /api/metrics/dashboard`
-
-## Example request
-
-```bash
-curl -X POST http://127.0.0.1:8000/api/chat/respond \
-  -H "Content-Type: application/json" \
-  -d '{
-    "channel": "webchat",
-    "user_id": "cust_001",
-    "message": "我的订单为什么还没发货？如果今天发不了能不能给我优惠券？",
-    "conversation_history": [
-      "用户昨天咨询过物流状态",
-      "客服回复仓库正在处理"
-    ]
-  }'
-```
-
-## Notes
-
-This is a demo/starter intended for presentation, internal demos, and architecture illustration. It uses deterministic mock logic instead of real LLM APIs and business systems.
